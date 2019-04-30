@@ -1,4 +1,4 @@
-// Copyright 2015 SeukWon Kang (kasworld@gmail.com)
+// Copyright 2015,2016,2017,2018,2019 SeukWon Kang (kasworld@gmail.com)
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -15,7 +15,7 @@ package ivector2d
 import (
 	"fmt"
 
-	"github.com/kasworld/rand"
+	"github.com/kasworld/g2rand"
 )
 
 type Vt [2]int
@@ -78,14 +78,14 @@ func (p Vt) Reflect(normal Vt) Vt {
 	return Vt{p[0] - d*normal[0], p[1] - d*normal[1]}
 }
 
-func RandVector2D(rnd *rand.Rand, st, end int) Vt {
+func RandVector2D(rnd *g2rand.G2Rand, st, end int) Vt {
 	return Vt{
 		rnd.IntRange(st, end),
 		rnd.IntRange(st, end),
 	}
 }
 
-func RandVector(rnd *rand.Rand, st, end Vt) Vt {
+func RandVector(rnd *g2rand.G2Rand, st, end Vt) Vt {
 	return Vt{
 		rnd.IntRange(st[0], end[0]),
 		rnd.IntRange(st[1], end[1]),
